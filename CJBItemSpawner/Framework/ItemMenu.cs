@@ -820,7 +820,7 @@ namespace CJBItemSpawner.Framework
             {
                 items = items.Where(item =>
                     item.Name.IndexOf(search, StringComparison.InvariantCultureIgnoreCase) >= 0
-                    || item.DisplayName.IndexOf(search, StringComparison.InvariantCultureIgnoreCase) >= 0
+                    || item.DisplayName?.IndexOf(search, StringComparison.InvariantCultureIgnoreCase) >= 0
                 );
             }
 
