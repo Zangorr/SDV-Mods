@@ -2,6 +2,7 @@
 
 # Release notes
 ## Upcoming release
+* Updated for Stardew Valley 1.6.
 * Fixed spawning Journal Scraps and Secret Notes.
 
 ## 2.1.6

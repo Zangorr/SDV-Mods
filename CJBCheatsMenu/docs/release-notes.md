@@ -2,6 +2,7 @@
 
 # Release notes
 ## Upcoming release
+* Updated for Stardew Valley 1.6.
 * Added warp to the [Witch's Swamp](https://stardewvalleywiki.com/Witch's_Swamp).
 * Added more menu sounds to improve accessibility.
 * Improved translations. Thanks to Dracoeris (updated Spanish)!
