@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using System.Linq;
 using CJBCheatsMenu.Framework.Components;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewValley;
+using StardewValley.Buffs;
 using StardewValley.Menus;
 
 namespace CJBCheatsMenu.Framework.Cheats.PlayerAndTools
@@ -64,15 +64,18 @@ namespace CJBCheatsMenu.Framework.Cheats.PlayerAndTools
                 return;
 
             // add or update buff
-            int buffId = this.BuffUniqueID + context.Config.MoveSpeed;
-            Buff buff = Game1.buffsDisplay.otherBuffs.FirstOrDefault(p => p.which == buffId);
-            if (buff == null)
-            {
-                Game1.buffsDisplay.addOtherBuff(
-                    buff = new Buff(0, 0, 0, 0, 0, 0, 0, 0, 0, speed: context.Config.MoveSpeed, 0, 0, minutesDuration: 1, source: "CJB Cheats Menu", displaySource: I18n.ModName()) { which = buffId }
-                );
-            }
-            buff.millisecondsDuration = 50;
+            Game1.player.applyBuff(
+                new Buff(
+                    buff_id: "CJBok.CheatsMenu/MoveSpeed",
+                    buff_source: "CJB Cheats Menu",
+                    display_source: I18n.ModName(),
+                    duration: 5000,
+                    buff_effects: new BuffEffects()
+                    {
+                        speed = { context.Config.MoveSpeed }
+                    }
+                )
+            );
         }
     }
 }
